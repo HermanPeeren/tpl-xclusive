@@ -1,0 +1,437 @@
+/**
+ * bs3.css - the Bootstrap 3 rules the xclusive-joostrap theme was written on top of,
+ * restated on top of Cassiopeia (Bootstrap 5).
+ *
+ * Loaded after Cassiopeia's template.css and before legacy.css, with the same selectors
+ * (and so the same specificity) as in Bootstrap 3, so the old theme rules in legacy.css
+ * and xclusive.css override them exactly as they did on Joomla 3.
+ *
+ * Breakpoints are the Bootstrap 3 ones: sm >= 768px, md >= 992px, lg >= 1200px.
+ * Only what the site's markup uses is here; this is not a full Bootstrap 3.
+ */
+
+/* ---------- Clearfix (Bootstrap 3 put it on these elements) ---------- */
+
+.clearfix::before,
+.clearfix::after,
+.container::before,
+.container::after,
+.nav::before,
+.nav::after,
+.navbar::before,
+.navbar::after,
+.navbar-header::before,
+.navbar-header::after,
+.navbar-collapse::before,
+.navbar-collapse::after {
+    display: table;
+    content: " ";
+}
+
+.clearfix::after,
+.container::after,
+.nav::after,
+.navbar::after,
+.navbar-header::after,
+.navbar-collapse::after {
+    clear: both;
+}
+
+/* ---------- Container ---------- */
+
+.container {
+    width: 100%;
+    max-width: none;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+        max-width: none;
+    }
+}
+
+/* ---------- Grid: 30px gutters, Bootstrap 3 col-xs-* ---------- */
+
+.row {
+    --gutter-x: 30px;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+[class*="col-xs-"],
+[class*="col-sm-"],
+[class*="col-md-"],
+[class*="col-lg-"] {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-1 { flex: 0 0 auto; width: 8.33333333%; }
+.col-xs-2 { flex: 0 0 auto; width: 16.66666667%; }
+.col-xs-3 { flex: 0 0 auto; width: 25%; }
+.col-xs-4 { flex: 0 0 auto; width: 33.33333333%; }
+.col-xs-5 { flex: 0 0 auto; width: 41.66666667%; }
+.col-xs-6 { flex: 0 0 auto; width: 50%; }
+.col-xs-7 { flex: 0 0 auto; width: 58.33333333%; }
+.col-xs-8 { flex: 0 0 auto; width: 66.66666667%; }
+.col-xs-9 { flex: 0 0 auto; width: 75%; }
+.col-xs-10 { flex: 0 0 auto; width: 83.33333333%; }
+.col-xs-11 { flex: 0 0 auto; width: 91.66666667%; }
+.col-xs-12 { flex: 0 0 auto; width: 100%; }
+
+/* Bootstrap 5 has col-sm-* from 576px and col-md-* from 768px; Bootstrap 3 from 768px
+   and 992px. Below its Bootstrap 3 breakpoint a column falls back to its smaller class or
+   to full width; from that breakpoint on it gets its own width again (after col-xs-*). */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    [class*="col-sm-"]:not([class*="col-xs-"]) {
+        width: 100%;
+    }
+    .col-xs-1[class*="col-sm-"] { width: 8.33333333%; }
+    .col-xs-2[class*="col-sm-"] { width: 16.66666667%; }
+    .col-xs-3[class*="col-sm-"] { width: 25%; }
+    .col-xs-4[class*="col-sm-"] { width: 33.33333333%; }
+    .col-xs-5[class*="col-sm-"] { width: 41.66666667%; }
+    .col-xs-6[class*="col-sm-"] { width: 50%; }
+    .col-xs-7[class*="col-sm-"] { width: 58.33333333%; }
+    .col-xs-8[class*="col-sm-"] { width: 66.66666667%; }
+    .col-xs-9[class*="col-sm-"] { width: 75%; }
+    .col-xs-10[class*="col-sm-"] { width: 83.33333333%; }
+    .col-xs-11[class*="col-sm-"] { width: 91.66666667%; }
+    .col-xs-12[class*="col-sm-"] { width: 100%; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    [class*="col-md-"]:not([class*="col-sm-"]):not([class*="col-xs-"]) {
+        width: 100%;
+    }
+    .col-xs-1[class*="col-md-"]:not([class*="col-sm-"]) { width: 8.33333333%; }
+    .col-xs-2[class*="col-md-"]:not([class*="col-sm-"]) { width: 16.66666667%; }
+    .col-xs-3[class*="col-md-"]:not([class*="col-sm-"]) { width: 25%; }
+    .col-xs-4[class*="col-md-"]:not([class*="col-sm-"]) { width: 33.33333333%; }
+    .col-xs-5[class*="col-md-"]:not([class*="col-sm-"]) { width: 41.66666667%; }
+    .col-xs-6[class*="col-md-"]:not([class*="col-sm-"]) { width: 50%; }
+    .col-xs-7[class*="col-md-"]:not([class*="col-sm-"]) { width: 58.33333333%; }
+    .col-xs-8[class*="col-md-"]:not([class*="col-sm-"]) { width: 66.66666667%; }
+    .col-xs-9[class*="col-md-"]:not([class*="col-sm-"]) { width: 75%; }
+    .col-xs-10[class*="col-md-"]:not([class*="col-sm-"]) { width: 83.33333333%; }
+    .col-xs-11[class*="col-md-"]:not([class*="col-sm-"]) { width: 91.66666667%; }
+    .col-xs-12[class*="col-md-"]:not([class*="col-sm-"]) { width: 100%; }
+}
+
+@media (min-width: 768px) {
+    .col-sm-1 { flex: 0 0 auto; width: 8.33333333%; }
+    .col-sm-2 { flex: 0 0 auto; width: 16.66666667%; }
+    .col-sm-3 { flex: 0 0 auto; width: 25%; }
+    .col-sm-4 { flex: 0 0 auto; width: 33.33333333%; }
+    .col-sm-5 { flex: 0 0 auto; width: 41.66666667%; }
+    .col-sm-6 { flex: 0 0 auto; width: 50%; }
+    .col-sm-7 { flex: 0 0 auto; width: 58.33333333%; }
+    .col-sm-8 { flex: 0 0 auto; width: 66.66666667%; }
+    .col-sm-9 { flex: 0 0 auto; width: 75%; }
+    .col-sm-10 { flex: 0 0 auto; width: 83.33333333%; }
+    .col-sm-11 { flex: 0 0 auto; width: 91.66666667%; }
+    .col-sm-12 { flex: 0 0 auto; width: 100%; }
+}
+
+@media (min-width: 992px) {
+    .col-md-1 { flex: 0 0 auto; width: 8.33333333%; }
+    .col-md-2 { flex: 0 0 auto; width: 16.66666667%; }
+    .col-md-3 { flex: 0 0 auto; width: 25%; }
+    .col-md-4 { flex: 0 0 auto; width: 33.33333333%; }
+    .col-md-5 { flex: 0 0 auto; width: 41.66666667%; }
+    .col-md-6 { flex: 0 0 auto; width: 50%; }
+    .col-md-7 { flex: 0 0 auto; width: 58.33333333%; }
+    .col-md-8 { flex: 0 0 auto; width: 66.66666667%; }
+    .col-md-9 { flex: 0 0 auto; width: 75%; }
+    .col-md-10 { flex: 0 0 auto; width: 83.33333333%; }
+    .col-md-11 { flex: 0 0 auto; width: 91.66666667%; }
+    .col-md-12 { flex: 0 0 auto; width: 100%; }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-1 { flex: 0 0 auto; width: 8.33333333%; }
+    .col-lg-2 { flex: 0 0 auto; width: 16.66666667%; }
+    .col-lg-3 { flex: 0 0 auto; width: 25%; }
+    .col-lg-4 { flex: 0 0 auto; width: 33.33333333%; }
+    .col-lg-5 { flex: 0 0 auto; width: 41.66666667%; }
+    .col-lg-6 { flex: 0 0 auto; width: 50%; }
+    .col-lg-7 { flex: 0 0 auto; width: 58.33333333%; }
+    .col-lg-8 { flex: 0 0 auto; width: 66.66666667%; }
+    .col-lg-9 { flex: 0 0 auto; width: 75%; }
+    .col-lg-10 { flex: 0 0 auto; width: 83.33333333%; }
+    .col-lg-11 { flex: 0 0 auto; width: 91.66666667%; }
+    .col-lg-12 { flex: 0 0 auto; width: 100%; }
+}
+
+/* ---------- Helper classes still used in templates and content ---------- */
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+    display: none !important;
+}
+
+@media (max-width: 767.98px) {
+    .visible-xs { display: block !important; }
+    .hidden-xs { display: none !important; }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .visible-sm { display: block !important; }
+    .hidden-sm { display: none !important; }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .visible-md { display: block !important; }
+    .hidden-md { display: none !important; }
+}
+
+@media (min-width: 1200px) {
+    .visible-lg { display: block !important; }
+    .hidden-lg { display: none !important; }
+}
+
+/* ---------- Nav ---------- */
+
+.nav {
+    display: block;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.nav > li {
+    position: relative;
+    display: block;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    text-decoration: none;
+}
+
+/* ---------- Navbar ---------- */
+
+.navbar {
+    display: block;
+    position: relative;
+    min-height: 50px;
+    padding: 0;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px;
+    margin-right: 0;
+    font-size: 18px;
+    line-height: 20px;
+    white-space: normal;
+}
+
+.navbar-brand > img {
+    display: block;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navbar-collapse {
+    flex-basis: auto;
+    flex-grow: 0;
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: visible;
+    border-top: 1px solid transparent;
+}
+
+@media (min-width: 768px) {
+    .navbar-collapse {
+        width: auto;
+        border-top: 0;
+        box-shadow: none;
+    }
+
+    .navbar-collapse.collapse {
+        display: block !important;
+        height: auto !important;
+        padding-bottom: 0;
+        overflow: visible !important;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+}
+
+.navbar-nav {
+    flex-direction: row;
+    margin: 7.5px -15px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav {
+        float: left;
+        margin: 0;
+    }
+
+    .navbar-nav > li {
+        float: left;
+    }
+
+    .navbar-nav > li > a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+/* ---------- Dropdown ---------- */
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-menu > li > a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+/* Open on keyboard focus too (hover is in legacy.css) */
+.dropdown:focus-within > .dropdown-menu {
+    display: block;
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+/* ---------- Typography differences ---------- */
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    opacity: 1;
+}
+
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 5px solid #eee;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+h4, h5, h6 {
+    margin-top: 10px;
+}
+
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.page-header {
+    padding-bottom: 9px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}

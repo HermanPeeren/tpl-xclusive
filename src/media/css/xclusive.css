@@ -1,0 +1,620 @@
+/* Xclusive Ballonvaarten: site styles (was css/custom.css of xclusive-joostrap, version as on the live site in November 2026). Regular Labs and JCE rules removed. */
+
+
+body {
+    background-color: #fff; /*wit*/
+    color: #555;
+}
+
+/*boven content 55px omdat anders onder fixed menu verdwijnt */
+.row {
+    margin: 0;
+    padding-top:55px;
+}
+/* maar niet bij klein scherm: dan position van menu: relative */
+@media (max-width: 767px) { 
+  .row {
+    padding-top:0;
+  }
+  .navbar-toggle {
+    margin-bottom: 5px;
+  }
+}
+
+.light-wrapper, .light-wrapper .container.inner {
+  background-color:#fff;
+  border-bottom: none;
+}
+
+hr {
+  padding:0;
+  margin: 1.5em 0;
+  border-top: 1px solid #555555;
+}
+
+/* top menu */
+.navbar-header {
+    background: none repeat scroll 0 0 #6c0000; /* xclusive-rood */
+  	height: 55px;
+}
+.navbar-nav > li > a {
+    font-family: 'Lato';
+    font-weight: normal;
+}
+.navbar-header .navbar-nav > li > a {
+    padding: 16px 14px 17px 14px;
+  	border-top: 2px solid #6c0000; /* xclusive-rood */
+}
+.navbar-header .container {
+    padding-left: 0;
+}
+.nav li a {
+     color: #fff;
+ }
+.navbar-nav > li.active > a, .navbar-nav > li > a:hover, .navbar-nav > li > li.active {
+    color: #d8bea6; /* goud */
+  	border-top: 2px solid #d8bea6; /* goud */
+}
+
+/* top-sub-menu */
+.navbar .dropdown-menu {
+    background: none repeat scroll 0 0 #333; /* grijs */
+  	border-top: 2px solid #c2a07a; /* darker gold */
+}
+.navbar .dropdown-menu li a {
+    font-size: 14px;
+    font-family: 'Lato';
+}
+.nav li.active ul li a, .nav li ul.dropdown-menu li a, .nav li ul.dropdown-menu li a:visited {
+    color: #ccc;
+}
+
+.navbar li ul.dropdown-menu li a:hover {
+    color: #fff; /* wit */
+}
+
+.navbar .dropdown-menu > .active > a,
+.navbar .dropdown-menu > .active > a:hover,
+.navbar .dropdown-menu > .active > a:focus {
+    color: #d8bea6; /* goud */
+}
+.navbar .dropdown-menu li a, .navbar .dropdown-menu li a:hover {
+    font-size: 14px; 
+    line-height: 1.1; /* was 1 */
+}
+
+/* hamburger-menu */
+.navbar-toggle {
+  color: white !important;
+}
+.navbar-toggle:hover {
+  color: #cfb53b !important; /* old gold */
+}
+/*sub-hamburger: caret duidelijker zichtbaar */
+.mm-menu .mm-list>li a.mm-subopen::after, 
+a.mm-subclose, 
+a.caret {
+  /*color: white !important;*/
+  color: rgba(255,255,255,1);
+  font-weight: bold !important;
+}
+.mm-menu{
+  --mm-color-button:white;
+  --mm-color-text: #00f;
+}
+.mm-panel {
+        --mm-color-background: #e0f2fc;
+        --mm-color-text: #222;
+        --mm-color-button: #4bb5ef;
+    }
+
+/*logo linksboven */
+.navbar-brand img {
+    height: 55px; 
+  margin-top: -30px;
+    margin-left: 0;
+    /*  animation-duration: 10s;
+      animation-name: ballonbeweeg;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      transition: left 0.1s ease-out 0s, top 0.5s ease-out 0s; */
+}
+/*
+@keyframes ballonbeweeg {
+    from
+    {
+        margin-top: -20px;
+        margin-left: 5px;
+    }
+    to
+    {
+        margin-top: -10px;
+        margin-left: 7px;
+    }
+} */
+
+
+/* home, sweet home - gaat helemaal mis in chrome zo: hele brede bovenbalk zonder menu */
+/*
+.navbar-nav > li:nth-child(1) a:after {
+    display: inline-block;
+    font-family: FontAwesome;
+    content: "\f015";
+    */
+    /*text-align: center;*/
+/*    color: #fff;
+    font-weight: normal;
+    text-indent:903em; *//* nakijken, verbeteren */
+/*}
+.navbar-nav > li:nth-child(1) a  {
+    text-indent:-906em;
+}
+.navbar-nav > li.current a:after {
+    color: #3792c1; */ /*blauw */
+/*}
+.navbar-nav > li a:hover:after {
+    color: #3792c1; */  /*blauw */
+/*}*/
+
+
+
+/* content */
+.container.inner {
+    /*background-color: #fff;*/
+    padding: 0 2em;
+}
+
+a {
+    color: #a17f1a; /* dark gold */
+    text-decoration: none;
+}
+
+a:visited {
+    color: #a17f1a; /* dark gold */
+}
+
+a:hover {
+    color: #cfb53b; /* old gold */
+    text-decoration: underline;
+}
+
+
+/* contact-pagina: body rode achtergrond */
+.contact div.container.inner {
+  background-color: #6c0000;   /* xclusive-rood */
+  color: #ffffff !important;
+  text-align:center;
+}
+
+.contact div.container.inner h1 {
+  color: #ffffff !important;
+  text-align:center;
+}
+
+/*footer-ondermenu */
+.dark-wrapper, .dark-wrapper .container.inner.ondermenu {
+    background-color: rgb(43, 51, 57); /*donkergrijs */
+    color: #fff;
+}
+.dark-wrapper .container.inner.ondermenu {
+    background-color: rgb(43, 51, 57); /*donkergrijs */
+    color: #fff;
+    margin-top: 0;
+    padding: 0;
+    border-bottom:0; /* anders 1px lijn */
+    text-align:left;
+}
+.dark-wrapper .container.inner.ondermenu  {
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+.dark-wrapper .container.inner ul {
+     width: 100%;
+    padding: 0;
+    padding-bottom: 1em;
+}
+.dark-wrapper .container.inner li {
+    width: 100%;
+}
+
+.dark-wrapper .container.inner a {
+    color: white;
+    margin-top: 0;
+    font-size: 15px;
+    line-height: 17px;
+    display:block;
+    width: 100%;
+    padding: 2px;
+    padding-left: 0;
+}
+.dark-wrapper .container.inner a:hover {
+    color: #d8bea6; /* goud */
+}
+.container.inner.ondermenu {
+    padding: 0 24px;
+}
+
+.ondermenu .col-xs-6, .ondermenu .col-md-3 {
+    padding-left: 0;
+}
+.ondermenu .col-xs-6 {
+    min-width: 200px;
+}
+.ondermenu .nav-header{
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    margin-bottom: 17px;
+}
+
+.onderStartplaatsenZH {
+    margin-top: -17px;
+}
+
+/*footer2: contactgegevens */
+.footer.black-wrapper  {
+    background: none repeat scroll 0 0 #6c0000; /* xclusive-rood */
+    margin-top: 0;
+    padding: 1.5em 0.5em;
+}
+.footer.black-wrapper .container.inner.ondermenu,
+.footer.black-wrapper .inner  {
+    background: none;
+    color: #fff;
+    padding: 0;
+}
+.footer.black-wrapper .container.inner a {
+    color: #fff;
+}
+
+.footer.black-wrapper .container.inner a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+
+/* vervangen 30-12-2019
+
+h1 {
+    background: #ff7200 url("../images/kopje_man_oranje26.gif") no-repeat right; !* oranje *!
+    font-size: 22px;
+    line-height: 26px;
+    padding-right: 1em;
+}
+h2 {
+    background: #36d150 url("../images/kopje_man_groen24.gif") no-repeat right; !* groen *!
+    font-size: 20px;
+    line-height: 24px;
+    padding-right: 1em;
+}
+h4 {
+    background-color: #681e5d;  !* paars *!
+    font-size: 16px;
+    line-height: 20px;
+}
+*/
+/* nu niet in gebruik: #df3027; rood*/
+
+h1,h2,h3,h4, fieldset.formFieldset legend {
+  color: #6c0000; /* #333333 */
+  text-transform: uppercase;
+}
+
+h1, .page-header {
+    font-size: 30px;
+    line-height: 32px;
+    padding-top:18px;
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-bottom: 6px;
+    border-bottom: none;
+    font-weight: 800;
+}
+h2, fieldset.formFieldset legend {
+    font-size: 24px;
+    line-height: 26px;
+    padding-left: 0;
+    margin-top: 1em;
+    font-weight: 600;
+}
+h3, h4 {
+    font-size: 18px;
+    line-height: 20px;
+    padding-left: 0;
+    font-weight: 600;
+}
+
+
+
+/* buttons */
+button, input[type="submit"] {
+    background-color: #6c0000;  /* xclusive-rood */
+    color: #fff;
+    font-weight:normal;
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 5px;
+    padding: 0.3em 0.9em;
+    text-decoration:none;
+}
+
+
+/* right-sidebar */
+/* vervangen 30-12-2019
+.right-sidebar h4 {
+    background: #681e5d url("../images/kopje_vrouw_paars20.gif") no-repeat left; !* paars *!
+    padding-left: 1.5em;
+}*/
+.right-sidebar h4 {
+    
+    padding-left: 0;
+    line-height: 1.5em;
+    width: 100%;
+}
+.right-sidebar p, .right-sidebar td {
+    font-size: .9em;
+}
+
+.module.twitter {
+    margin-bottom: 1em;
+}
+
+/* header, banner */
+.container.inner .custom.headermodule {
+    background-color: white;
+    text-align: center;
+}
+.container.inner .custom.headermodule .headercontainer {
+    position: relative;
+}
+.container.inner .custom.headermodule .headertop{
+   
+    font-size: 22px;
+    letter-spacing: 1px;
+    padding: 0.3em;
+    background: none repeat scroll 0 0 rgba(255,255, 255, 0.4); /* wit, transparant */
+    position: absolute;
+    width: 100%;
+    bottom:0;
+    margin-bottom: 0;
+    display:block;
+}
+
+/* ==== Lees meer... === */
+.btn, .btn-submit {
+    background-color: white;
+    color: #6c0000 !important;  /* xclusive-rood */ 
+    font-weight: bold;
+}
+
+.btn:hover, .btn-submit:hover {
+    background-color: white;
+    color: #36d150 !important;  /* groen */
+}
+
+/* === tables lastminutes and vaartenvrijeplaatsen === */
+div.vaarttabel.outer {
+    width: 100%;
+    max-width: 650px;
+    min-width: 320px;
+    border: 1px solid #d8bea6; /* goud */
+    border-radius:5px;
+    padding-bottom: .7em;
+}
+
+table.vaarttabel.inner {
+    width: 100%;
+    max-width: 100%;
+    font-size: .9em;
+    table-layout:fixed;
+}
+table.vaarttabel thead {
+    border: none;
+    border-bottom: 1px solid #d8bea6; /* goud */
+}
+
+table.vaarttabel th {
+    text-align: center;
+   padding: .7em;
+}
+table.vaarttabel th.leftalign {
+    text-align: left;
+}
+table.vaarttabel.inner td {
+    padding-left: .7em;
+    padding-right: .7em;
+}
+
+div.vaarttabel.outer.rightcolumn {
+    max-width: 213px;
+    padding: 0.3em;
+    min-width: 0;
+}
+
+div.vaarttabel.outer.rightcolumn table.vaarttabel.inner td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+table.vaarttabel.lrlastminutes td {
+    font-family: Arial, Helvetica, Sans Serif;
+    white-space: nowrap;
+    font-size: 0.8em;
+}
+
+table.vertrekplaatsenrechts {
+    width:100%;
+    max-width: 213px;
+    margin-top: 6px;
+    font-size:0.8em;
+    white-space: nowrap;
+}
+
+table.vertrekplaatsenrechts td {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* MeerKnop */
+.MeerKnop {
+    text-align: right;
+    margin-bottom: 2em;
+}
+
+.MeerKnop a {
+    background-color: #6c0000;  /* xclusive-rood */
+    border-radius:5px;
+    padding: .3em .9em;
+    color: white;
+    font-weight: bold;
+    font-size: .9em;
+    text-decoration: none;
+}
+
+.MeerKnop a:hover {
+    color: #d8bea6; /* goud */
+}
+
+/* RSform */
+input[type="radio"], input[type="checkbox"] {
+    /* display: inline-block;*/
+    width: auto;
+    margin: .5em;
+}
+
+label {
+    font-weight: normal;
+}
+/* deze styling met pieletjes gestopt 30-12-2019
+
+fieldset.formFieldset legend {
+    !* stylen als een h2 *!
+    font-family: 'gosmicksansbold';
+    font-weight: normal;
+    letter-spacing: 1px;
+    color: #fff !important; !* wit *!
+    display: inline-block !important;
+    padding-left: .7em;
+    background: #36d150 url("../images/kopje_man_groen24.gif") no-repeat right; !* groen *!
+    font-size: 20px !important;
+    line-height: 24px;
+    padding-right: 1em;
+    border-width: 0;
+    width: auto;
+    margin-bottom: 10px;
+}
+*/
+
+ul.breadcrumb {
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0 8px;
+}
+
+/* ========== responsive =================== */
+
+/* Logo iets lager op mobile menu */
+
+@media (max-width: 767px) {
+    .navbar-brand {
+      padding-top: 0;
+      padding-left: 20px;
+      margin-top:0;
+        /*margin-top: -20px;*/
+    }
+    .navbar-brand img {
+      padding-top: 15px;
+      /*margin-top: 2px;*/
+        /*margin-top: -20px;*/
+    }
+  .navbar.fixed .navbar-header,
+	.navbar .navbar-header {
+	    background: #6c0000;
+	}
+}
+
+/* Grote navbar weg bij <992px */
+@media (max-width: 991px) {
+    .navbar-collapse.collapse {
+      display:none !important;
+    }
+}
+
+/*color: #a7b1b7;  grijs */
+/*color: #e03127;  rood */
+/* #0a9ad0;   blue from balloon */
+
+
+/* social media */
+.db8socialmediashare.socialmedia {
+    font-size:32px;
+}
+.db8socialmediashare.socialmedia a:hover{
+    text-decoration: none;
+}
+.fa.fa-pinterest-square {
+    display:none;
+}
+
+/* Citaat */
+blockquote {
+    background-color: #6c0000;  /* xclusive-rood */
+}
+
+/*ochtendvaarten*/
+.ochtend {
+    color: green;
+}
+
+/*hidden captcha*/
+tr.extrafield, .extrafield td, .extrafield label, .extrafield input {
+    display: none !important;
+    visibility: hidden;
+    height: 0;
+}
+
+/* ruimte onder reactieformulier */
+.tekstenOnderVaart {
+    margin-bottom: 1em;
+}
+
+/* tabel opstijgplaatsen */
+table#opstijgplaatsen td {
+  padding:10px 20px;
+}
+
+/* call-to-action-buttons on page */
+.buttonContainer a.buttonWrapper {
+  background-color: #6c0000;   /* xclusive-rood */
+  color: white;
+  border-radius: 3px;
+ margin:0 auto 0;
+ padding:8px;
+ transition:all .3s;
+ -webkit-transition:all .3s;
+ -moz-transition:all .3s;
+ -ms-transition:all .3s;
+ -o-transition:all .3s
+}
+.buttonContainer a.buttonWrapper:hover {
+  color: #cfb53b; /* old gold */
+  text-decoration: none;
+}
+.buttonContainer .buttonWrapper:hover {
+ animation-name:none;
+ -webkit-animation-name:none
+}
+
+
+/* Fonts: these came from the "Google Fonts" options of the Joomla 3 template style */
+p, li, h2, h3, h4 {
+    font-family: Lato, sans-serif;
+}
+h1 {
+    font-family: "Playfair Display", sans-serif;
+}

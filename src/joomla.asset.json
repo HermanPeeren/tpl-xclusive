@@ -1,0 +1,82 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "xclusive",
+  "version": "1.0.0",
+  "description": "Assets of the Xclusive Ballonvaarten template, a child of Cassiopeia.",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "template.xclusive.fonts.roboto",
+      "description": "Roboto family (theme text), same Google Fonts URLs as the Joomla 3 template.",
+      "type": "style",
+      "uri": "https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700italic,700,900,900italic,300italic,300,100italic,100|Roboto+Condensed:300italic,400italic,700italic,400,700,300|Roboto+Slab:400,700,300,100"
+    },
+    {
+      "name": "template.xclusive.fonts.lato",
+      "description": "Lato (paragraphs, lists, h2-h4, menus), as set in the Joomla 3 template style.",
+      "type": "style",
+      "uri": "https://fonts.googleapis.com/css?family=Lato"
+    },
+    {
+      "name": "template.xclusive.fonts.playfair",
+      "description": "Playfair Display (h1), the URL of the Joomla 3 template style. This old css API URL only delivers weight 400; the browser makes the 800 of h1 by synthetic bold, as on the old site.",
+      "type": "style",
+      "uri": "https://fonts.googleapis.com/css?family=Playfair+Display:wght@700;800;900"
+    },
+    {
+      "name": "template.xclusive.fonts",
+      "description": "All web fonts of the template.",
+      "type": "preset",
+      "dependencies": [
+        "template.xclusive.fonts.roboto#style",
+        "template.xclusive.fonts.lato#style",
+        "template.xclusive.fonts.playfair#style"
+      ]
+    },
+    {
+      "name": "template.xclusive.bs3",
+      "description": "Bootstrap 3 rules the old theme depends on, restated on top of Cassiopeia.",
+      "type": "style",
+      "uri": "bs3.css",
+      "dependencies": [
+        "template.active"
+      ]
+    },
+    {
+      "name": "template.xclusive.legacy",
+      "description": "Theme rules ported from xclusive-joostrap (style.css, j-backbone.css).",
+      "type": "style",
+      "uri": "legacy.css",
+      "dependencies": [
+        "template.xclusive.bs3"
+      ]
+    },
+    {
+      "name": "template.xclusive.compat",
+      "description": "Fixes for Joomla 6 / Cassiopeia after the legacy theme rules.",
+      "type": "style",
+      "uri": "compat.css",
+      "dependencies": [
+        "template.xclusive.legacy"
+      ]
+    },
+    {
+      "name": "template.xclusive",
+      "description": "Xclusive site styles (was custom.css).",
+      "type": "style",
+      "uri": "xclusive.css",
+      "dependencies": [
+        "template.xclusive.compat"
+      ]
+    },
+    {
+      "name": "template.xclusive",
+      "description": "Back-to-top link.",
+      "type": "script",
+      "uri": "xclusive.js",
+      "attributes": {
+        "defer": true
+      }
+    }
+  ]
+}

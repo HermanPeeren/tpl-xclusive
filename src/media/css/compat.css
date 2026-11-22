@@ -1,0 +1,162 @@
+/**
+ * compat.css - fixes after legacy.css, for what changed with Joomla 6 / Cassiopeia:
+ * new markup (mobile menu, back-to-top) and Cassiopeia rules that legacy.css does not
+ * override by itself. Loaded before xclusive.css.
+ */
+
+/* Cassiopeia gives .footer a gradient background */
+.footer.black-wrapper {
+    background-image: none;
+}
+
+/* Bootstrap 3 floated the footer menu columns; they are not in a .row,
+   so make their container the flex row Bootstrap 5 columns need */
+.container.inner.ondermenu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Links in Cassiopeia are underlined; the old theme had no underline except on hover */
+.navbar a,
+.ondermenu a,
+.footer a {
+    text-decoration: none;
+}
+
+/* ---------- Mobile menu: Bootstrap 5 offcanvas styled like jQuery mmenu "mm-dark" ---------- */
+
+/* The old fixed navbar has z-index 8000: the menu and its backdrop must be above it */
+.offcanvas-backdrop {
+    z-index: 9000;
+}
+
+.xcl-offcanvas {
+    --offcanvas-zindex: 9010;
+    z-index: 9010;
+    --offcanvas-width: 440px;
+    --offcanvas-bg: #333;
+    --offcanvas-color: rgba(255, 255, 255, 0.6);
+    max-width: 80%;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.6);
+    background: #333;
+}
+
+.xcl-offcanvas .offcanvas-header {
+    justify-content: center;
+    gap: 2.5em;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.xcl-offcanvas .offcanvas-header a,
+.xcl-offcanvas .offcanvas-header button {
+    padding: 0;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    background: none;
+    border: 0;
+}
+
+.xcl-offcanvas .offcanvas-header a:hover,
+.xcl-offcanvas .offcanvas-header button:hover {
+    color: #fff;
+}
+
+.xcl-offcanvas .offcanvas-body {
+    padding: 0;
+}
+
+.xcl-offcanvas .nav,
+.xcl-offcanvas .nav ul {
+    display: block;
+    float: none;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.xcl-offcanvas .nav li {
+    position: relative;
+    display: block;
+    float: none;
+    margin: 0;
+    /* the separator line is the link's border-bottom from legacy.css (with !important) */
+}
+
+.xcl-offcanvas .nav li a,
+.xcl-offcanvas .nav li .nav-header,
+.xcl-offcanvas .nav li .separator {
+    display: block;
+    /* !important: legacy.css forces "padding: 12px 0 !important" on navbar links below 768px */
+    padding: 10px 10px 10px 20px !important;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: none;
+    text-decoration: none;
+    border: 0;
+}
+
+.xcl-offcanvas .nav li a:hover,
+.xcl-offcanvas .nav li.current > a,
+.xcl-offcanvas .nav li.active > a {
+    color: #fff;
+    border: 0;
+}
+
+.xcl-offcanvas .dropdown-menu {
+    position: static;
+    display: block;
+    float: none;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.1);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.xcl-offcanvas .dropdown-menu li a,
+.xcl-offcanvas .dropdown-menu li a:hover {
+    padding: 10px 10px 10px 40px !important;
+    background: none;
+}
+
+.xcl-offcanvas .caret {
+    display: none;
+}
+
+/* ---------- Back to top (shown by js/xclusive.js after scrolling) ---------- */
+
+.go-top.is-visible {
+    display: block;
+}
+
+/* ---------- Font Awesome 4 classes in content ---------- */
+
+/* Joomla 6 ships Font Awesome 6, which still knows the Font Awesome 4 names
+   ("fa fa-...") but draws "fa" with the solid font. Brand icons need the brands font. */
+.fa.fa-facebook,
+.fa.fa-facebook-official,
+.fa.fa-facebook-square,
+.fa.fa-youtube,
+.fa.fa-youtube-play,
+.fa.fa-youtube-square,
+.fa.fa-twitter,
+.fa.fa-twitter-square,
+.fa.fa-instagram,
+.fa.fa-pinterest,
+.fa.fa-pinterest-square,
+.fa.fa-linkedin,
+.fa.fa-linkedin-square,
+.fa.fa-whatsapp,
+.fa.fa-google-plus,
+.fa.fa-google-plus-square {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400;
+}
