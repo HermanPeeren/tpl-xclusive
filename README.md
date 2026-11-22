@@ -32,7 +32,10 @@ Extensions). Cassiopeia must be installed (it is a core template). Then make a s
 
 The Google Fonts options of the old style (Lato for `p, li, h2, h3, h4`, Playfair Display
 for `h1`) are now fixed in `xclusive.css` and `joomla.asset.json`, with the same Google
-Fonts URLs.
+Fonts URLs. Lato is loaded with weights 300, 400 and 700: on Joomla 3 the plugin
+`plg_content_vaartenvrijeplaatsen` loaded those weights itself for its tables; the Joomla 6
+version of the plugin no longer does, its table CSS (plugin option "Extra CSS") relies on
+the template for the font.
 
 ## Module positions
 
@@ -111,7 +114,10 @@ headings, text, buttons, footer menu columns and red footer match. The PHP files
 8. **Widths between 768 and 991 px**: Bootstrap 3 breakpoints are restored for the grid
    and the navbar; check pages with sidebars at tablet width if sidebars come into use.
 9. **Fonts**: same Google Fonts URLs as before (Roboto, Roboto Condensed, Roboto Slab,
-   Lato, Playfair Display). Consider hosting them locally (privacy).
+   Playfair Display), Lato now on every page with weights 300/400/700. On the old site,
+   pages without the vaartenvrijeplaatsen tables only had Lato 400, so bold Lato (h2–h4,
+   footer menu headings) was synthesized there; it is now the real bold, slightly
+   different. Consider hosting the fonts locally (privacy).
 
 ## License
 

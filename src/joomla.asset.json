@@ -13,9 +13,9 @@
     },
     {
       "name": "template.xclusive.fonts.lato",
-      "description": "Lato (paragraphs, lists, h2-h4, menus), as set in the Joomla 3 template style.",
+      "description": "Lato 300, 400 and 700 (paragraphs, lists, h2-h4, menus, and the tables of plg_content_vaartenvrijeplaatsen, which loaded this URL itself on Joomla 3).",
       "type": "style",
-      "uri": "https://fonts.googleapis.com/css?family=Lato"
+      "uri": "https://fonts.googleapis.com/css?family=Lato:300,400,700"
     },
     {
       "name": "template.xclusive.fonts.playfair",
