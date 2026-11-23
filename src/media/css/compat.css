@@ -170,3 +170,80 @@ fieldset.formFieldset > legend {
     margin-bottom: 20px;
     border-bottom: 1px solid #e5e5e5;
 }
+
+/* Video iframes in articles without a width (articles 14 and 140): full width at 16:9, as the
+   JCE plugin "responsive widgets" made them on Joomla 3 (wf-iframe-container). Iframes with a
+   width, such as the former AllVideos ones (400 x 300), keep it, as on Joomla 3. */
+.com-content-article__body iframe:is(:not([width]), [width=""]) {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+
+/* Tabs and sliders of plg_content_tabsandsliders (Bootstrap 5 markup) in the look of Regular
+   Labs Tabs and Sliders on Joomla 3 (outlined handles and content). */
+.yepr-tabs > .nav-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-left: 0;
+    border-bottom: 1px solid #ddd;
+}
+.yepr-tabs > .nav-tabs > li {
+    display: block;
+    margin: 0 0 -1px;
+    padding: 0;
+}
+.yepr-tabs > .nav-tabs .nav-link {
+    margin-right: 2px;
+    padding: 8px 12px;
+    line-height: 18px;
+    color: var(--link-color);
+    background: none;
+    border: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+}
+.yepr-tabs > .nav-tabs .nav-link:hover {
+    border-color: #eee #eee #ddd;
+}
+.yepr-tabs > .nav-tabs .nav-link.active {
+    color: #555;
+    background-color: #fff;
+    border-color: #ddd #ddd transparent;
+}
+.yepr-tabs > .tab-content {
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+}
+.yepr-tabs > .tab-content > .tab-pane {
+    padding: 12px;
+}
+.yepr-sliders.accordion {
+    margin-bottom: 1em;
+}
+.yepr-sliders > .accordion-item {
+    margin-bottom: 2px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+}
+.yepr-sliders .accordion-button {
+    padding: 8px 15px;
+    font-size: inherit;
+    color: var(--link-color);
+    background: none;
+    box-shadow: none;
+}
+.yepr-sliders .accordion-button::after {
+    display: none;
+}
+.yepr-sliders .accordion-button:hover {
+    background-color: #eee;
+}
+.yepr-sliders .accordion-button:not(.collapsed) {
+    background-color: #f8f8f8;
+}
+.yepr-sliders .accordion-body {
+    padding: 15px;
+    border-top: 1px solid #e5e5e5;
+}
