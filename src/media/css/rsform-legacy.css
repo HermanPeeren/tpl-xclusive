@@ -1,0 +1,84 @@
+/**
+ * rsform-legacy.css - the CSS of the RSForm Pro layouts "inline", "2lines" and their xhtml
+ * variants, which most forms of this site use. On Joomla 3 the plugin RSForm Pro Legacy
+ * Layouts loaded it; that plugin does not install on Joomla 6. Copied verbatim from
+ * plg_rsfplegacylayouts 3.0.0, media/css/frameworks/legacy/legacy.css
+ * ((C) 2019 www.rsjoomla.com, GNU General Public License).
+ */
+
+.formTableLayout {
+	border: none;
+}
+
+.formTableLayout > tbody > tr {
+	border: none;
+}
+
+.formTableLeft,
+.formTableRight {
+	border: none;
+}
+
+.formTableLayout tr td label {
+	display: inline;
+	margin: 3px;
+}
+
+.formTableLayout tr.rsform-block,
+.formTableLayout tr.rsform-block > td {
+	border: 0;
+}
+
+.formTableLayout tr.rsform-block > td {
+	padding: 3px;
+}
+
+.form2LinesLayout .formField label {
+	display: inline;
+	margin: 3px;
+}
+
+fieldset.formFieldset {
+	margin-bottom: 10px;
+}
+
+fieldset.formFieldset legend {
+	padding: 0 2px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+fieldset.formFieldset ol.formContainer {
+	margin: 0;
+	padding: 0;
+}
+
+fieldset.formFieldset ol.formContainer li {
+	background-image: none;
+	list-style: none;
+	padding: 5px;
+	margin: 0;
+	clear: both;
+}
+
+.formFieldset .formBody label {
+	display: inline;
+	margin: 3px;
+}
+
+.formField {
+	display: block;
+	overflow: auto;
+}
+
+.formClr {
+	clear:both;
+	display: block;
+}
+
+div.formCaption {
+	display: block;
+	float: left;
+	width: 25%;
+	min-height: 12px;
+}

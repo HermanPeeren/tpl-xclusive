@@ -118,7 +118,7 @@ $wa->usePreset('template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'l
     ->useStyle('template.active.language')
     ->registerAndUseStyle('theme.colors_standard', 'global/colors_standard.css')
     ->usePreset('template.xclusive.fonts')
-    ->useStyle('template.xclusive')
+    ->useStyle('template.xclusive.rsform')
     ->useStyle('template.user')
     ->useScript('template.user')
     ->useScript('bootstrap.offcanvas')
@@ -146,6 +146,11 @@ if ($totop) {
 $wa->registerStyle('template.active', '', [], [], ['template.cassiopeia.' . ($this->direction === 'rtl' ? 'rtl' : 'ltr')]);
 
 $this->setMetaData('viewport', 'width=device-width, initial-scale=1.0');
+
+// The site styles come last, after the CSS of the RSForm forms (which Joomla puts after the
+// scripts), as custom.css did on Joomla 3. Otherwise e.g. the forms' own
+// "legend { font-size: 12px }" wins over the template's legend styling.
+$siteCss = $wa->getAsset('style', 'template.xclusive')->getUri() . '?' . $this->getMediaVersion();
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
@@ -153,6 +158,7 @@ $this->setMetaData('viewport', 'width=device-width, initial-scale=1.0');
     <jdoc:include type="metas" />
     <jdoc:include type="styles" />
     <jdoc:include type="scripts" />
+    <link href="<?php echo htmlspecialchars($siteCss, ENT_QUOTES, 'UTF-8'); ?>" rel="stylesheet">
 </head>
 <body class="<?php echo htmlspecialchars($bodyClass, ENT_QUOTES, 'UTF-8'); ?>">
 <?php if ($gtmId !== '') : ?>

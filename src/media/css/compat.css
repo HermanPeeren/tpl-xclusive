@@ -160,3 +160,13 @@
     font-family: "Font Awesome 6 Brands";
     font-weight: 400;
 }
+
+/* RSForm forms with a legacy layout (inline, 2lines): Cassiopeia (Bootstrap 5) floats every
+   legend at 100% width, and its ".com-content-article ol { overflow: hidden }" then puts the
+   list of fields beside that float with no width left: the fields disappear. Bootstrap 3 did
+   not float legends; the line and margin below are those of the Bootstrap 3 legend. */
+fieldset.formFieldset > legend {
+    float: none;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}

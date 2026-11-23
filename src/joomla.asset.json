@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
   "name": "xclusive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Assets of the Xclusive Ballonvaarten template, a child of Cassiopeia.",
   "license": "GPL-2.0-or-later",
   "assets": [
@@ -61,8 +61,17 @@
       ]
     },
     {
+      "name": "template.xclusive.rsform",
+      "description": "CSS of the RSForm Pro legacy layouts (inline, 2lines), which the plugin RSForm Pro Legacy Layouts loaded on Joomla 3.",
+      "type": "style",
+      "uri": "rsform-legacy.css",
+      "dependencies": [
+        "template.xclusive.compat"
+      ]
+    },
+    {
       "name": "template.xclusive",
-      "description": "Xclusive site styles (was custom.css).",
+      "description": "Xclusive site styles (was custom.css). Not used through the asset manager: index.php links it after the scripts, as the last stylesheet.",
       "type": "style",
       "uri": "xclusive.css",
       "dependencies": [
