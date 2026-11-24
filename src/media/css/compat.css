@@ -332,3 +332,27 @@ fieldset.formFieldset > legend {
 .error-page {
     padding: 30px 0 80px;
 }
+
+/* Text as on the J3 site: lines of 22px (its template settings), links underlined only on hover
+   (Cassiopeia uses 1.5 and always underlines links without a class). */
+body {
+    line-height: 22px;
+}
+
+body a,
+body a:not([class]) {
+    text-decoration: none;
+}
+
+body a:hover,
+body a:focus,
+body a:not([class]):hover,
+body a:not([class]):focus {
+    text-decoration: underline;
+}
+
+/* Bootstrap 3 sets no padding on table cells (tables with the class .table get theirs). */
+td,
+th {
+    padding: 0;
+}
