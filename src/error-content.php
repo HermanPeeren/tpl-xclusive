@@ -25,6 +25,5 @@ $home      = $this->baseurl . '/';
     <p>Kijk in het menu, in de <a href="<?php echo $home; ?>sitemap">sitemap</a> of ga naar de <a href="<?php echo $home; ?>">startpagina</a>.</p>
     <?php if ($this->debug) : ?>
         <p><span class="badge bg-secondary"><?php echo $errorCode; ?></span> <?php echo htmlspecialchars($this->error->getMessage(), ENT_QUOTES, 'UTF-8'); ?></p>
-        <?php echo $this->renderBacktrace(); ?>
     <?php endif; ?>
 </div>
