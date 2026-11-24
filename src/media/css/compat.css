@@ -356,3 +356,12 @@ td,
 th {
     padding: 0;
 }
+
+/* Dropdowns of the top menu float over the page from 768px on, as in Bootstrap 3. Cassiopeia's
+   ".navbar-nav .dropdown-menu {position: static}" kept them in the flow, so a hovered item
+   stretched to the submenu's width and pushed the other items aside. */
+@media (min-width: 768px) {
+    .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+}
