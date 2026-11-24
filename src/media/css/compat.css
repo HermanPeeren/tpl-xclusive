@@ -327,3 +327,8 @@ fieldset.formFieldset > legend {
         opacity: 1;
     }
 }
+
+/* The error page (error.php): some room above the footer. */
+.error-page {
+    padding: 30px 0 80px;
+}

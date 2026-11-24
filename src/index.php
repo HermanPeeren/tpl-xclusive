@@ -221,7 +221,11 @@ $siteCss = $wa->getAsset('style', 'template.xclusive')->getUri() . '?' . $this->
                 <main class="col-md-<?php echo $span; ?>">
                     <jdoc:include type="modules" name="top-article" style="xhtml" />
                     <jdoc:include type="message" />
-                    <jdoc:include type="component" />
+                    <?php if ($this instanceof \Joomla\CMS\Document\ErrorDocument) : ?>
+                        <?php require __DIR__ . '/error-content.php'; ?>
+                    <?php else : ?>
+                        <jdoc:include type="component" />
+                    <?php endif; ?>
                 </main>
             <?php endif; ?>
             <?php if ($this->countModules('right')) : ?>
